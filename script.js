@@ -1,5 +1,9 @@
-const container = document.querySelector('#container');
 const GRID_WIDTH = 900;
+
+const container = document.querySelector('#container');
+container.style.display = 'flex';
+container.style.flexDirection = 'column';
+container.style.alignItems = 'center';
 
 createButton();
 createGrid(16);
@@ -7,6 +11,9 @@ createGrid(16);
 function createButton() {
     const btn = document.createElement('button');
     btn.textContent = 'Update squares per side';
+    btn.style.margin = '20px';
+    btn.style.fontSize = '20px';
+    
     btn.addEventListener('click', updateGridSquares);
     container.appendChild(btn);
 }
@@ -37,8 +44,8 @@ function createGrid(squaresPerSide) {
         const rowDiv = document.createElement('div');
         rowDiv.style.display = 'flex';
         rowDiv.style.justifyContent = 'center';
-        rowDiv.style.maxWidth = GRID_WIDTH + 'px';
-        rowDiv.style.maxHeight = squareWidth + 'px';
+        rowDiv.style.width = GRID_WIDTH + 'px';
+        rowDiv.style.height = squareWidth + 'px';
         
         gridDiv.appendChild(rowDiv);
 
@@ -64,6 +71,5 @@ function createGrid(squaresPerSide) {
 }
 
 function changeSquareColor(element) {
-    element.style.backgroundColor = 'green';
-    element.style.color = 'white';
+    element.style.backgroundColor = 'CornflowerBlue';
 }
